@@ -8,7 +8,7 @@ def flying_objects_config():
   cfg.training_data_dir = "../data/FlyingObjectDataset_10K/training"
   cfg.validation_data_dir = "../data/FlyingObjectDataset_10K/validation"
   cfg.testing_data_dir = "../data/FlyingObjectDataset_10K/testing"
-  cfg.fineGrained = False
+  cfg.fineGrained = True
 
   if cfg.fineGrained:
       # classes
@@ -39,7 +39,7 @@ def flying_objects_config():
   cfg.IMAGE_WIDTH = 128       # image width
   cfg.IMAGE_HEIGHT = 128      # image height
   cfg.IMAGE_CHANNEL = 3       # image channel
-  cfg.NUM_EPOCHS = 10        # epoch number
+  cfg.NUM_EPOCHS = 15        # epoch number
   cfg.BATCH_SIZE = 32         # batch size
   cfg.LEARNING_RATE = 0.001  # learning rate
   cfg.LR_DECAY_FACTOR = 0.1   # multiply the learning rate by this factor
