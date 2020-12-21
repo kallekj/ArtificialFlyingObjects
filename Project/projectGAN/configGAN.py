@@ -5,9 +5,9 @@ def flying_objects_config():
 
   cfg = edict()
 
-  cfg.training_data_dir = "../data/FlyingObjectDataset_10K/training"
-  cfg.validation_data_dir = "../data/FlyingObjectDataset_10K/validation"
-  cfg.testing_data_dir = "../data/FlyingObjectDataset_10K/testing"
+  cfg.training_data_dir = "../../data/FlyingObjectDataset_10K/training"
+  cfg.validation_data_dir = "../../data/FlyingObjectDataset_10K/validation"
+  cfg.testing_data_dir = "../../data/FlyingObjectDataset_10K/testing"
     
   cfg.GPU = 0                 # GPU ID
   cfg.DROPOUT_PROB = 0.5      # Probability to keep a node in dropout
