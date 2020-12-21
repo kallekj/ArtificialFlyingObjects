@@ -17,7 +17,7 @@ def flying_objects_config():
   cfg.NUM_EPOCHS = 5        # epoch number
   cfg.BATCH_SIZE = 30         # batch size
   cfg.SEQUENCE_LENGTH = 10         # length of each sequence
-  cfg.LEARNING_RATE = 0.01  # learning rate
+  cfg.LEARNING_RATE = 0.001  # learning rate
   cfg.LR_DECAY_FACTOR = 0.1   # multiply the learning rate by this factor
   cfg.PRINT_EVERY = 20        # print in every 50 epochs
   cfg.SAVE_EVERY = 1         # save after each epoch
