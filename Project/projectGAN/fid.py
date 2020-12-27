@@ -200,3 +200,4 @@ class FrechetInceptionDistance(object):
 			shuffle=shuffle, seed=seed)
 
 		return frechet_distance(real_mean, real_cov, gen_mean, gen_cov)
+    
