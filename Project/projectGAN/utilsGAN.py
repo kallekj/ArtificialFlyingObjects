@@ -82,6 +82,21 @@ def generate_augmented_segmentation_batches(in_gen, image_gen):
 
         yield aug_img / 255 , aug_lab
 
+def generate_augmented_lastframe_batches(in_gen, image_gen):
+    for data, labels, _ in in_gen:
+        data = (data + 1)*127.5
+        labels = (labels + 1)*127.5
+        #aug_data = image_gen.flow(255 * data, batch_size=data.shape[0],seed=42)
+        #aug_data_label = image_gen.flow(255 * labels, batch_size=data.shape[0],seed=42)
+        aug_data = image_gen.flow(data, batch_size=data.shape[0],seed=42)
+        aug_data_label = image_gen.flow(labels, batch_size=data.shape[0],seed=42)
+        #aug_data_text_label = image_gen.flow(text_label, batch_size=data.shape[0], seed=42)
+        aug_img = next(aug_data)
+        aug_lab = next(aug_data_label)
+        #aug_text_lab = next(aug_data_text_label)
+
+        yield (aug_img/127.5)-1 , (aug_lab / 127.5)-1
+        
 def generate_segmentation_batches(data_folder, image_shape, batch_size):
 
     images = glob(os.path.join(data_folder, 'image', '*.png'))
@@ -221,8 +236,11 @@ def generate_lastframepredictor_batches(data_folder, image_shape, batch_size):
             batch_images = np.array(x_train)
             batch_lables = np.array(y_train)
             # normalize image data (not the labels)
-            batch_images = batch_images.astype('float32') / 255
-            batch_lables = batch_lables.astype('float32') / 255
+            batch_images = (batch_images.astype('float32') / 127.5) - 1
+            batch_lables = (batch_lables.astype('float32') / 127.5) - 1
+            
+            #batch_images = batch_images.astype('float32') / 255
+            #batch_lables = batch_lables.astype('float32') / 255
 
             yield (batch_images, batch_lables, labels)
 
