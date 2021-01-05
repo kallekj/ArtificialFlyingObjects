@@ -96,6 +96,7 @@ def generate_augmented_lastframe_batches(in_gen, image_gen):
         #aug_text_lab = next(aug_data_text_label)
 
         yield (aug_img/127.5)-1 , (aug_lab / 127.5)-1
+        #yield aug_img/255 , aug_lab/255
         
 def generate_segmentation_batches(data_folder, image_shape, batch_size):
 

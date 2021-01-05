@@ -14,10 +14,10 @@ def flying_objects_config():
   cfg.NUM_CLASS = 3    # number of classes
   cfg.GPU = 0                 # GPU ID
   cfg.DROPOUT_PROB = 0.5      # Probability to keep a node in dropout
-  cfg.IMAGE_WIDTH = 64       # image width
-  cfg.IMAGE_HEIGHT = 64      # image height
+  cfg.IMAGE_WIDTH = 128       # image width
+  cfg.IMAGE_HEIGHT = 128      # image height
   cfg.IMAGE_CHANNEL = 3       # image channel
-  cfg.NUM_EPOCHS = 15        # epoch number
+  cfg.NUM_EPOCHS = 20        # epoch number
   cfg.BATCH_SIZE = 30         # batch size
   cfg.SEQUENCE_LENGTH = 10         # length of each sequence
   cfg.LEARNING_RATE = 0.0002  # learning rate
