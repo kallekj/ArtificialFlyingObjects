@@ -17,7 +17,7 @@ def flying_objects_config():
   cfg.IMAGE_WIDTH = 64       # image width
   cfg.IMAGE_HEIGHT = 64      # image height
   cfg.IMAGE_CHANNEL = 3       # image channel
-  cfg.NUM_EPOCHS = 20        # epoch number
+  cfg.NUM_EPOCHS = 15        # epoch number
   cfg.BATCH_SIZE = 30         # batch size
   cfg.SEQUENCE_LENGTH = 10         # length of each sequence
   cfg.LEARNING_RATE = 0.0002  # learning rate
